@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import v2.mvc.spring.blog.service.BlogService;
 
@@ -36,5 +37,21 @@ public class BlogController {
 	    model.addAttribute("blogCont", blogCont);
 	 
 	    return "blog/read";
+	}
+	
+	@GetMapping(value = "/edit/{blogContSeq}")
+	public ModelAndView getEdit(@PathVariable("blogContSeq") int blogContSeq) {
+	    ModelAndView mav = new ModelAndView("/blog/edit");
+	 
+	    Map<String, Object> blogCont = this.blogService.read(blogContSeq);
+	 
+	    if (blogCont == null) {
+	        mav.setViewName("redirect:/list");
+	        return mav;
+	    }
+	 
+	    mav.addObject("blogCont", blogCont);
+	 
+	    return mav;
 	}
 }
