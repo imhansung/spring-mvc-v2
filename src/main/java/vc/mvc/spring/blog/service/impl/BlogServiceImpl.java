@@ -18,8 +18,8 @@ public class BlogServiceImpl implements BlogService {
 	
 	@Override
 	public int create(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return 0;
+		int seq = this.blogDAO.insert(map);
+	    return seq;
 	}
 
 }
