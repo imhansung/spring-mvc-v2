@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import v2.mvc.spring.blog.dao.BlogDAO;
+import v2.mvc.spring.blog.mapper.BlogMapper;
 import v2.mvc.spring.blog.service.BlogService;
 import v2.mvc.spring.blog.vo.BlogEditRequestVO;
 
@@ -13,10 +14,12 @@ import v2.mvc.spring.blog.vo.BlogEditRequestVO;
 public class BlogServiceImpl implements BlogService {
 
 	private BlogDAO blogDAO;
+	private BlogMapper blogMapper;
 	
 	@Autowired
-	public BlogServiceImpl(BlogDAO blogDAO) {
+	public BlogServiceImpl(BlogDAO blogDAO, BlogMapper blogMapper) {
 	    this.blogDAO = blogDAO;
+	    this.blogMapper = blogMapper;
 	}
 	
 	@Override
@@ -35,6 +38,11 @@ public class BlogServiceImpl implements BlogService {
 	public boolean edit(BlogEditRequestVO blogEditRequestVO) {
 	    int affectRowsCount = this.blogDAO.update(blogEditRequestVO);
 	    return affectRowsCount > 0;
+	}
+	
+	@Override
+	public boolean delete(int blogContSeq) {
+	    return this.blogMapper.delete(blogContSeq) > 0;
 	}
 
 }
