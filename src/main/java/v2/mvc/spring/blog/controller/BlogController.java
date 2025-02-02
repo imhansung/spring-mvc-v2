@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import vc.mvc.spring.blog.service.BlogService;
+import v2.mvc.spring.blog.service.BlogService;
 
 @Controller
 public class BlogController {

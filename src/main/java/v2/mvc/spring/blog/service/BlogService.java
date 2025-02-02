@@ -1,4 +1,4 @@
-package vc.mvc.spring.blog.service;
+package v2.mvc.spring.blog.service;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package vc.mvc.spring.blog.dao;
+package v2.mvc.spring.blog.dao;
 
 import java.util.Map;
 
