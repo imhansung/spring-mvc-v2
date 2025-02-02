@@ -24,5 +24,15 @@
 	where
 	BLG_CONT_SEQ = #{BLG_CONT_SEQ}
     ]]>
-</select>
+	</select>
+	<update id="update" parameterType="v2.mvc.spring.blog.vo.BlogEditRequestVO">
+	<![CDATA[
+    UPDATE TB_BLG_CONT
+    SET
+        TITLE = #{title},
+        CONT_BDY = #{contBdy}
+    WHERE
+    BLG_CONT_SEQ = #{blogContSeq}
+    ]]>
+	</update>
 </mapper>
