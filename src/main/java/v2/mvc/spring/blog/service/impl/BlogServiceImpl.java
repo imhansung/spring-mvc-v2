@@ -24,4 +24,10 @@ public class BlogServiceImpl implements BlogService {
 	    return seq;
 	}
 
+	@Override
+	public Map<String, Object> read(int blogContSeq) {
+		Map<String, Object> blogCont = this.blogDAO.selectOne(blogContSeq);
+	    return blogCont;
+	}
+
 }
