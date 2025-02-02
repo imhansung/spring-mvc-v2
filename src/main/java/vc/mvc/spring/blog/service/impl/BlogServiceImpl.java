@@ -3,10 +3,12 @@ package vc.mvc.spring.blog.service.impl;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import vc.mvc.spring.blog.dao.BlogDAO;
 import vc.mvc.spring.blog.service.BlogService;
 
+@Service
 public class BlogServiceImpl implements BlogService {
 
 	private BlogDAO blogDAO;
