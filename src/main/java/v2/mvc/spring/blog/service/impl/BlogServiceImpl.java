@@ -14,6 +14,7 @@ import v2.mvc.spring.blog.vo.BlogEditRequestVO;
 public class BlogServiceImpl implements BlogService {
 
 	private BlogDAO blogDAO;
+	//@Autowired
 	private BlogMapper blogMapper;
 	
 	@Autowired

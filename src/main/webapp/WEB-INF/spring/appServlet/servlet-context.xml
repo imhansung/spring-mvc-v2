@@ -23,6 +23,11 @@
 	
 	<context:component-scan base-package="v2.mvc.spring" />
 	
+	<!-- MyBatis Mapper Scan 추가 -->
+    <beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <beans:property name="basePackage" value="v2.mvc.spring.blog.mapper"/>
+    </beans:bean>
+	
 	
 	
 </beans:beans>
