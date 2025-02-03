@@ -1,5 +1,6 @@
 package v2.mvc.spring.blog.service.impl;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import v2.mvc.spring.blog.dao.BlogDAO;
 import v2.mvc.spring.blog.mapper.BlogMapper;
 import v2.mvc.spring.blog.service.BlogService;
 import v2.mvc.spring.blog.vo.BlogEditRequestVO;
+import v2.mvc.spring.blog.vo.BlogListRequestVO;
+import v2.mvc.spring.blog.vo.BlogListResponseVO;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -44,6 +47,12 @@ public class BlogServiceImpl implements BlogService {
 	@Override
 	public boolean delete(int blogContSeq) {
 	    return this.blogMapper.delete(blogContSeq) > 0;
+	}
+	
+	@Override
+	public List<BlogListResponseVO> list(BlogListRequestVO blogListRequestVO) {
+	    List<BlogListResponseVO> result = this.blogMapper.selectList(blogListRequestVO);
+	    return result;
 	}
 
 }
