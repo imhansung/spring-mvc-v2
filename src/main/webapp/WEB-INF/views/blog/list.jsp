@@ -29,7 +29,11 @@
             <c:forEach var="blogListResponseVO" items="${blogListResponseVOList}">
             <tr>
                 <td>${ blogListResponseVO.blgContSeq}</td>
-                <td>${ blogListResponseVO.title}</td>
+                <td>
+					<a href="/read/${ blogListResponseVO.blgContSeq}">
+						${ blogListResponseVO.title}
+					</a>
+				</td>
                 <td>${ blogListResponseVO.insertDtFormat}</td>
                 <td>
                     <a href="/edit/${ blogListResponseVO.blgContSeq}">수정</a>
