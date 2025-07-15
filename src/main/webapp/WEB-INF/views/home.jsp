@@ -8,7 +8,8 @@
 <h1>
 	Hello world!  
 </h1>
-
+<p>home.jsp</p>
+<a href="/list">list</a>
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
